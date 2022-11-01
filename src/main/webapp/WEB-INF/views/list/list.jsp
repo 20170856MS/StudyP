@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>List Page</title>
 </head>
 <body>
 	<h1>List</h1>
@@ -33,7 +33,10 @@
 			
 			</tbody>
 			
-			
 		</table>
+		
+		<div>
+			<a href="./add">write</a>
+		</div>
 </body>
 </html>

@@ -32,7 +32,7 @@ public class ListController {
 	
 	@GetMapping("add")
 	public String setAdd()throws Exception{
-		return "board/write";
+		return "list/add";
 	}
 	
 	@PostMapping("add")
@@ -43,4 +43,6 @@ public class ListController {
 		
 		return "redirect:./list";
 	}
+	
+	
 }

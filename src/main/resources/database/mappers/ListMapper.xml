@@ -8,4 +8,12 @@
     		SELECT * FROM ListT ORDER BY NUM DESC
 			limit #{startRow}, #{perPage}
     	</select>
+    	
+    	<insert id="setAdd">
+    		INSERT INTO ListT VALUES (#{num}, #{title}, #{writer}, #{contents}, 0, now(), 0,0,0)
+    	</insert>
+    	<insert id="setFileAdd">
+    		INSERT INTO ListFiles VALUES (NULL, #{num}, #{fileName}, #{oriName})
+    	</insert>
+    	
     </mapper>

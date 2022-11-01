@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Index Page</title>
 </head>
 <body>
 	<img alt="" src="./images/gudi.jpg">
