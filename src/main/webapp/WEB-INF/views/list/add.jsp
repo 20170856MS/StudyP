@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<h1>Board Write Page</h1>
+	<h1>Write Page</h1>
 	<form action="add" method="post" enctype="multipart/form-data">
 		<div class="mb-3">
 		  <label for="title" class="form-label">Title</label>

@@ -7,6 +7,6 @@
   	<typeAliases>
   		<typeAlias type="com.iu.home.List.ListVO" alias="ListVO"/>
   		<typeAlias type="com.iu.home.util.Pager" alias="Pager"/>
-  		
+  		<typeAlias type="com.iu.home.List.ListFileVO" alias="ListFileVO"/>
   	</typeAliases>
   </configuration>
