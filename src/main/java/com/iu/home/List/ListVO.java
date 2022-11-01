@@ -1,5 +1,7 @@
 package com.iu.home.List;
 
+import java.sql.Date;
+
 import lombok.Data;
 
 @Data
@@ -9,7 +11,7 @@ public class ListVO {
 	private String writer;
 	private String contents;
 	private Long hit;
-	private Data regDate;
+	private Date regDate;
 	private Long ref;
 	private Long step;
 	private Long depth;

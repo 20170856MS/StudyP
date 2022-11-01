@@ -25,7 +25,7 @@ public class ListController {
 		List<ListVO> ar = listService.getList(pager);
 		mv.addObject("list", ar);
 		mv.addObject("pager", pager);
-		mv.setViewName("board/list");
+		mv.setViewName("list/list");
 		
 		return mv;
 	}
