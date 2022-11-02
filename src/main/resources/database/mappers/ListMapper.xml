@@ -9,10 +9,10 @@
 			limit #{startRow}, #{perPage}
     	</select>
     	
-    	<insert id="setAdd">
+    	<insert id="setAdd" parameterType="ListVO" useGeneratedKeys="true" keyProperty="num">
     		INSERT INTO ListT VALUES (#{num}, #{title}, #{writer}, #{contents}, 0, now(), 0,0,0)
     	</insert>
-    	<insert id="setFileAdd">
+    	<insert id="setFileAdd" parameterType="ListFileVO">
     		INSERT INTO ListFiles VALUES (NULL, #{num}, #{fileName}, #{oriName})
     	</insert>
     	

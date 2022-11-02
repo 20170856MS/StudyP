@@ -4,6 +4,7 @@ console.log("fileManager");
 let count =0;
 
 $("#fileAdd").click(function(){
+    console.log("fileAdd")
     if(flag){
         let size = $("#fileAddResult").attr("data-file-size");
         if(size==undefined){
