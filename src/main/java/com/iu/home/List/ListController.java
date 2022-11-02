@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -45,4 +46,29 @@ public class ListController {
 	}
 	
 	
+	@PostMapping("fileDelete")
+	@ResponseBody
+	public int setFileDelete(ListFileVO listFileVO)throws Exception{
+		int result = listService.setDeleteFile(listFileVO);
+		
+		return result;
+	}
+	
+	@GetMapping("update")
+	public ModelAndView setUpdate(ListVO listVO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("list/update");
+		listVO = listService.getDetail(listVO);
+		mv.addObject("vo", listVO);
+		return mv;
+	}
+	
+	@GetMapping("detail")
+	public ModelAndView getDetail(ListVO listVO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		listVO=listService.getDetail(listVO);
+		mv.addObject("vo", listVO);
+		mv.setViewName("list/detail");
+		return mv;
+	}
 }

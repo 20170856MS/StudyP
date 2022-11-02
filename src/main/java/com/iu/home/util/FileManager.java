@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.OutputStream;
 import java.net.URLEncoder;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.util.FileCopyUtils;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.view.AbstractView;
 
 import com.iu.home.List.ListFileVO;
@@ -62,4 +64,36 @@ public class FileManager extends AbstractView{
 		 fi.close();
 		
 	}
+	
+	public String saveFile(MultipartFile multipartFile, String path) throws Exception {
+		
+		//1. 중복되지 않는 파일명 생성 (UUID, Date)
+		String fileName = UUID.randomUUID().toString();
+		
+		//23. 확장자
+		StringBuffer bf = new StringBuffer();
+		bf.append(fileName);
+		bf.append("_");
+		
+		//파일명과 확장자 분리
+		String ex = multipartFile.getOriginalFilename();//아이유.jpg
+		ex = ex.substring(ex.lastIndexOf("."));
+		
+		//bf.append(multipartFile.getOriginalFilename());
+		bf.append(ex);
+		
+		fileName = bf.toString();
+		
+		//3. File Save
+		File file = new File(path, bf.toString());
+		
+		// FileCopyUtils
+		// MultipartFile
+		//FileCopyUtils.copy(multipartFile.getBytes(), file);
+		multipartFile.transferTo(file);
+		
+		return fileName;
+		
+	}
+
 }

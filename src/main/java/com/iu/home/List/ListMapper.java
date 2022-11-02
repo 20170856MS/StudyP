@@ -13,4 +13,10 @@ public interface ListMapper {
 	public int setAdd(ListVO listVO) throws Exception;
 	public int setFileAdd(ListFileVO listFileVO)throws Exception;
 	
+	
+	public ListFileVO getDetailFile(ListFileVO listFileVO) throws Exception;
+	
+	public int setDeleteFile(ListFileVO listFileVO)throws Exception;
+	
+	public ListVO getDetail(ListVO listVO)throws Exception;
 }

@@ -7,6 +7,9 @@
 <meta charset="UTF-8">
 <title>Add List</title>
 </head>
+<c:import url="../temp/boot.jsp"></c:import>
+<c:import url="../temp/summer.jsp"></c:import>
+<script defer type="text/javascript" src="/js/fileManager.js"></script>
 <body>
 
 	<h1>Write Page</h1>
@@ -35,6 +38,11 @@
 			<button>WRITE</button>
 		</div>
 	</form>
-
+	<script type="text/javascript">
+	$('#contents').summernote({
+        tabsize: 4,
+        height: 250
+      });
+	</script>
 </body>
 </html>
