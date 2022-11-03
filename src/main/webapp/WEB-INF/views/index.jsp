@@ -9,6 +9,7 @@
 <title>Index Page</title>
 </head>
 <body>
+	<a href="./member/login">Login</a>
 	<img alt="" src="./images/gudi.jpg">
 	<a href="./list/list">List</a>
 </body>
